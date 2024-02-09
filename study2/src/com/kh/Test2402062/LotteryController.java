@@ -1,6 +1,7 @@
 package com.kh.Test2402062;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.TreeSet;
@@ -44,13 +45,21 @@ public class LotteryController {
 			
 		}
 		
-		for (int i = 0; i < 4; i++) {
+		Collections.shuffle(winArray);
+		
+		if (winArray.size() < 4) {
+			win = null;
+			return win;
+		} else {
+			for (int i = 0; i < 4; i++) {
+				
+				win.add(winArray.get(i));
+				
+			}
 			
-			win.add(winArray.get(i));
-			
+			return win;
 		}
 		
-		return win;
 	}
 	
 	public TreeSet sortedWinObject() {

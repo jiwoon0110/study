@@ -101,7 +101,11 @@ public class LotteryMenu {
 	
 	public void winObject() {
 		
-		System.out.println(lc.winObject());
+		if (lc.winObject() == null) {
+			System.out.println("추첨할 대상이 부족합니다.");
+		} else {
+			System.out.println(lc.winObject());
+		}
 		
 	}
 	
