@@ -1,7 +1,7 @@
 package com.kh.Test2402062;
 
-public class Lottery { // jiwoon
-
+public class Lottery { 
+	
 	private String name;
 	private String phone;
 	
@@ -33,7 +33,7 @@ public class Lottery { // jiwoon
 
 	@Override
 	public String toString() {
-		return "(" + name + phone + ")";
+		return "( 이름 : " + name + ", 번호 : " + phone + " )";
 	}
 
 	@Override

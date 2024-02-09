@@ -2,6 +2,7 @@ package com.kh.Test2402062;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 public class LotteryController {
@@ -18,30 +19,50 @@ public class LotteryController {
 
 	public boolean deleteObject(Lottery l) {
 		
-		lottery.remove(l);
-		
-		
-				
+		if (win != null) {
+			
+			win.remove(l);
+			
+			return lottery.remove(l);
+			
+		} else {
+			
+			return lottery.remove(l);
+			
+		}
 	}
 	
 	public HashSet winObject() {
-		
+
 		ArrayList winArray = new ArrayList();
 		
-		winArray.add(lottery);
+		Iterator iterator = lottery.iterator();
 		
+		while (iterator.hasNext()) {
+			
+			winArray.add(iterator.next());
+			
+		}
 		
+		for (int i = 0; i < 4; i++) {
+			
+			win.add(winArray.get(i));
+			
+		}
 		
-		
-		
+		return win;
 	}
 	
 	public TreeSet sortedWinObject() {
+
+		
 		
 	}
 	
 	public boolean searchWinner(Lottery l) {
-		return true;
+		
+		return win.contains(l);
+		
 	}
 
 }
