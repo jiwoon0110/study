@@ -6,6 +6,8 @@ public class Run {
 
 		new LotteryMenu().mainMenu();
 		
+		System.out.println(" just test");
+		
 	}
 
 }
